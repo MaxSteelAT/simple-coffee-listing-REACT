@@ -1,0 +1,27 @@
+body {
+  background-color: #121315;
+}
+
+.App {
+  position: relative; /* Para que los elementos absolutos se posicionen en relación a este contenedor */
+  width: 100%;
+  height: 100vh; /* O lo que necesites */
+}
+
+.background-header {
+  background-image: url("../resources/bg-cafe.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+}
+
+.container {
+  width: 500px;
+  /* height: 500px; */
+  background-color: aliceblue;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
