@@ -17,11 +17,122 @@ body {
 }
 
 .container {
-  width: 500px;
-  /* height: 500px; */
-  background-color: aliceblue;
+  width: 1000px;
+  border-radius: 10px;
+  background-color: #1b1d1f;
+  color: #fef7ee;
+  text-align: center;
   position: absolute;
-  top: 35%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.information-container {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & p {
+    width: 450px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #6f757c;
+  }
+}
+
+button {
+  background-color: #1c1d1f;
+  color: #fef7ee;
+  border-style: none;
+  margin-right: 25px;
+}
+button:hover {
+  border-style: none;
+  border-radius: 10px;
+  background-color: #4d5562;
+  width: 120px;
+  height: 40px;
+}
+
+.coffee-listing-container {
+  width: 250px;
+  margin-top: 40px;
+  margin-left: 40px;
+
+  & .coffee-image img {
+    width: 250px;
+    height: 150px;
+    background-color: #fef7ee;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  & .coffe-price {
+    height: 15px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & .qualification {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+
+    & a {
+      font-size: 15px;
+      color: #6f757c;
+    }
+  }
+}
+
+.popular-container {
+  width: 80px;
+  height: 25px;
+  border-radius: 10px;
+  background-color: #f6c768;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.popular-icon {
+  position: absolute;
+}
+
+.popular {
+  color: #121315;
+  border-radius: 10px;
+  height: 10px;
+  width: 100px;
+}
+
+.price {
+  color: #1c1d1f;
+  width: 55px;
+  height: 25px;
+  border-style: none;
+  background-color: #bee3cc;
+  border-radius: 5px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.state {
+  color: #ed735d;
+  font-size: 16px;
+}
+
+.coffee-grid {
+  display: grid;
+  align-items: end;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 16px;
 }
