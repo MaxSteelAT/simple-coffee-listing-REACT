@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
+// import "./reset.css";
 import "./App.css";
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
       const data = await response.json();
       setCoffeeList(data);
     } catch (error) {
-      console.log("Hola, si hay error");
+      console.error("Catch: Error ", error);
     }
   };
 
@@ -47,7 +49,7 @@ function App() {
           <p>
             Introducing our Coffee Collection, a selection of unique cofees from
             different roast types and origins, expertly roasterd in small
-            batches and shipped fresh weekly
+            batches and shipped fresh weekly.
           </p>
         </div>
         <div className="filter-container">
@@ -65,32 +67,34 @@ function App() {
             Available Now{" "}
           </button>
         </div>
-        <div className="coffee-grid">
-          {filteredCoffeeList.map((item, index) => (
-            <div key={index} className="coffee-listing-container">
-              <div className="coffee-image">
-                <div className="popular-icon">
-                  {item.popular && (
-                    <div className="popular-container">
-                      <a className="popular">Popular</a>
-                    </div>
-                  )}
+        <div className="coffee-grid-container">
+          <div className="coffee-grid">
+            {filteredCoffeeList.map((item, index) => (
+              <div key={index} className="coffee-listing-container">
+                <div className="coffee-image">
+                  <div className="popular-icon">
+                    {item.popular && (
+                      <div className="popular-container">
+                        <a className="popular">Popular</a>
+                      </div>
+                    )}
+                  </div>
+                  <img src={item.image} alt={item.name} />
                 </div>
-                <img src={item.image} alt={item.name} />
+                <div className="coffe-price">
+                  <h3>{item.name}</h3>
+                  <h3 className="price">{item.price}</h3>
+                </div>
+                <div className="qualification">
+                  <h3>
+                    ⭐ {item.rating}
+                    <a>({item.votes})</a>
+                  </h3>
+                  <h3 className="state">{item.available ? "" : "Sold Out"}</h3>
+                </div>
               </div>
-              <div className="coffe-price">
-                <h3>{item.name}</h3>
-                <h3 className="price">{item.price}</h3>
-              </div>
-              <div className="qualification">
-                <h3>
-                  ⭐ {item.rating}
-                  <a>({item.votes})</a>
-                </h3>
-                <h3 className="state">{item.available ? "" : "Sold Out"}</h3>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
